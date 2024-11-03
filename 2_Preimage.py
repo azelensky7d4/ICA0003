@@ -40,6 +40,19 @@ def prsha_1(message, start_bit, hash_length):
 
 
 def find_preimage(M, P, hash_length, max_attempts):
+    """
+    Finds the preimage for given message.
+
+    Generates a random string of length 1-5 containing ASCII letters and numbers 0-9. Then calculates PRSHA-1 hash for
+    both original message P and generated message Q. If both are the same, returns all info about the preimage: hash,
+    original message, preimage message, attempts and elapsed time.
+
+    :param M: start index for prsha-1.
+    :param P: original message P.
+    :param hash_length: length of prsha-1 hash.
+    :param max_attempts: maximum attempts for finding preimage.
+    :return:
+    """
     # Start timer
     start_time = time.time()
     attempt_count = 0
